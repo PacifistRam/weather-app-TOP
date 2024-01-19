@@ -1,3 +1,7 @@
+:root{
+    --section-shadow:0 5px 20px 2px rgb(77, 80, 85,0.5);
+}
+
 *,*::before,*::after {
     margin: 0;
     padding: 0;
@@ -97,3 +101,72 @@ button{
     transform: scale(0.95);
 }
 
+.weather-section{
+    padding-inline: 1rem;
+    
+}
+.weather-detail-section{
+    display: flex;
+    gap: 1.2rem;
+    
+}
+.weather-card{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.2rem;
+    width: 50%;
+    background-color: rgba(55, 65, 81,0.4);
+    color: #f1f5f9;
+    box-shadow: var(--section-shadow);
+    border-radius: 5px;
+}
+.location-wrapper{
+    padding-block: 1rem;
+    padding-right: 1rem;
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    box-shadow: var(--section-shadow);
+}
+.location-name{
+    font-size:2rem ;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+   
+}
+.weather-details{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding-inline: 1rem;
+    padding-bottom: 1.2rem;
+    box-shadow: var(--section-shadow);
+}
+.weather-icon-wrapper{
+    width: 50%;
+}
+.weather-icon-wrapper > img{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+.weather-description{
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.weather-info-wrapper > .temperature{
+    font-size: 10vh;
+    margin-bottom: 1rem;
+}
+.weather-info-wrapper > .temperature-feels{
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 200;
+}
+.weather-detailed-grid{
+    width: 50%;
+    box-shadow: var(--section-shadow);
+    border-radius: 5px;
+}
