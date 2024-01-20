@@ -1,3 +1,5 @@
+
+
 const searchForm = document.querySelector('.search-form');
 const searchInput = document.querySelector('#search-input');
 const searchButton = document.querySelector('#search-button');
@@ -6,12 +8,12 @@ const locationName = document.querySelector('.location-name');
 const currentDateValue = document.querySelector('.date');
 const currentDay = document.querySelector('.day');
 const locationTime = document.querySelector('.location-time');
-const WeatherImage = document.querySelector('#weather-image');
+const WeatherImage = document.querySelector('#weather-icon');
 const WeatherDescription = document.querySelector('#weather-description');
 const currentTemperature = document.querySelector('.temperature');
+const feelsTemperature =document.querySelector('.temperature-feels')
 
 const daysOfWeek = ['Sunday','Monday','Tuesday','wednesday','Thursday','Friday','Saturday'] 
-
 
 const display = (e) => {
     e.preventDefault();
@@ -39,6 +41,7 @@ searchForm.addEventListener('submit', display);
       if(location && current && forecast){
         // console.log(location)
         console.log(current)
+
         // console.log(forecast)
         console.log(currentDate);
         console.log(localTime);
@@ -59,8 +62,7 @@ const renderLocationData= (location,currentDate,localTime) =>{
 }
 
 const localDayAndDate = (currentDate,localTime) =>{
-  const localTimeAsLocal = new Date(localTime);
-  console.log(localTimeAsLocal);
+  
   locationTime.textContent = localTime;
 
   const dayDate = new Date(currentDate);
@@ -73,8 +75,16 @@ const localDayAndDate = (currentDate,localTime) =>{
 }
 
 const renderCurrentWeatherData = (current) =>{
-  const tempInCelsius  =current.temp_c
+  const weatherImageUrl = current.condition.icon
+  const weatherConditionText = current.condition.text
+  WeatherImage.src = weatherImageUrl;
+  
+  const tempInCelsius  = current.temp_c
   const tempInFahrenheit  =current.temp_f
   currentTemperature.textContent  =`${tempInCelsius}°C`
+
+  const feelsLIkeTempInCelsius = current.feelslike_c
+  const feelsLIkeTempInFahrenheit = current.feelslike_f
+  feelsTemperature.textContent = `Feels LIke: ${feelsLIkeTempInCelsius}`;
 }
-weatherData("panaji");
+weatherData("Manchester");
