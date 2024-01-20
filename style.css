@@ -157,7 +157,8 @@ button{
     font-weight: 600;
 }
 .weather-info-wrapper > .temperature{
-    font-size: 10vh;
+    /* font-size: 4vw; */
+    font-size: clamp(18px, 7vw, 5rem);
     margin-bottom: 1rem;
 }
 .weather-info-wrapper > .temperature-feels{
